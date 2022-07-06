@@ -33,3 +33,6 @@ target_include_directories(nmea2000
   PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}
 )
+
+install(TARGETS nmea2000 DESTINATION lib)
+install(FILES N2kMessages.h DESTINATION include)

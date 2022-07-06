@@ -23,6 +23,8 @@
 cmake_minimum_required(VERSION 3.0)
 project(NMEA2000)
 
+option(NMEA2000_BUILD_TESTS "Build tests" OFF)
+
 add_compile_options(
   -Wall
   -Werror
@@ -30,8 +32,9 @@ add_compile_options(
   -g
 )
 
-enable_testing()
-
 add_subdirectory(src)
-add_subdirectory(third-party/catch)
-add_subdirectory(test)
+if(NMEA2000_BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(third-party/catch)
+    add_subdirectory(test)
+endif()
