@@ -34,5 +34,22 @@ target_include_directories(nmea2000
   ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
+set(NMEA2000_HEADERS
+        NMEA2000_CAN.h
+        NMEA2000_CompilerDefns.h
+        NMEA2000.h
+        NMEA2000StdTypes.h
+        N2kCANMsg.h
+        N2kDef.h
+        N2kDeviceList.h
+        N2kGroupFunctionDefaultHandlers.h
+        N2kGroupFunction.h
+        N2kMaretron.h
+        N2kMessagesEnumToStr.h
+        N2kMessages.h
+        N2kMsg.h
+        N2kStream.h
+        N2kTypes.h)
+
 install(TARGETS nmea2000 DESTINATION lib)
-install(FILES N2kMessages.h DESTINATION include)
+install(FILES ${NMEA2000_HEADERS} DESTINATION include)
